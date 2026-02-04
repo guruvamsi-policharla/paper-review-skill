@@ -2,7 +2,7 @@
 
 Systematic LaTeX paper review for correctness, clarity, and consistency. Builds a high-level overview from introduction/technical overview sections, then reviews each section in parallel with shared context.
 
-Works with both **OpenCode** and **Claude Code**.
+Works with **OpenCode**, **Claude Code**, and **OpenAI Codex**.
 
 ## Install
 
@@ -26,6 +26,9 @@ curl -fsSL https://raw.githubusercontent.com/guruvamsi-policharla/paper-review-s
 
 # Claude Code only
 curl -fsSL https://raw.githubusercontent.com/guruvamsi-policharla/paper-review-skill/main/install.sh | bash -s -- --claude
+
+# OpenAI Codex only
+curl -fsSL https://raw.githubusercontent.com/guruvamsi-policharla/paper-review-skill/main/install.sh | bash -s -- --codex
 ```
 
 ## Usage
@@ -36,10 +39,14 @@ curl -fsSL https://raw.githubusercontent.com/guruvamsi-policharla/paper-review-s
 cd /path/to/your/paper
 ```
 
-Then use the `/paper-review` command:
+Then use the `/paper-review` command (OpenCode/Claude Code) or `$paper-review` (Codex):
 
 ```
+# OpenCode / Claude Code
 /paper-review review this paper
+
+# OpenAI Codex
+$paper-review review this paper
 ```
 
 Review specific sections:
@@ -99,6 +106,9 @@ The installer adds skills to the appropriate locations:
 
 # Claude Code
 .claude/skills/paper-review/      # or ~/.claude/skills/paper-review/
+
+# OpenAI Codex
+.agents/skills/paper-review/      # or ~/.agents/skills/paper-review/
 ```
 
 Skill contents:
